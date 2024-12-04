@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Grid, Typography, Link, Divider, IconButton } from '@mui/material';
 import { Facebook, Twitter, LinkedIn, Instagram } from '@mui/icons-material'; // Import the icons
 import theme from '../theme'; // Import the theme object directly
-import Logo from '../img/logo.png';
+import Logo from '../img/VOLTSMASTERS logo.png';
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
               style={{ height: '120px', width: '120px', marginRight: '10px' }}
             />
             <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
-              Solar Energy Solutions
+            Voltsmasters Energy
             </Typography>
           </Grid>
 

@@ -22,7 +22,7 @@ const HeroSection = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'linear-gradient(135deg, #FDB813 30%, #4CAF50 60%, #007BFF 90%)',
+            background: 'linear-gradient(135deg, #F58525 30%, #088D47 90%)',
             clipPath:'polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)',
             padding: 6,
           }}

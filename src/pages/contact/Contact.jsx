@@ -8,11 +8,11 @@ const Contact = () => {
       <Box
         sx={{
           py: 4,
-          backgroundColor: theme.colors.headerFooter, // Dark background color
-          color: theme.colors.buttonText, // Light text color
+          backgroundColor: "#F5F5F5", // Light background color
+          color: theme.colors.text, // Dark text color
           padding: "20px",
           borderRadius: "8px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)", // Box shadow for separation
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Subtle shadow for light theme
         }}
       >
         <Typography variant="h3" gutterBottom sx={{ color: theme.colors.primary }}>
@@ -27,26 +27,27 @@ const Contact = () => {
         {/* Contact Details Section */}
         <Box
           sx={{
-            backgroundColor: "#333", // Darker background for contact details section
+            backgroundColor: "#FFFFFF", // White background for contact details
             padding: "15px",
             borderRadius: "8px",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
             marginBottom: "20px",
           }}
         >
           <Typography variant="h5" sx={{ color: theme.colors.primary, mb: 2 }}>
             Contact Details
           </Typography>
-          <Typography variant="body1" sx={{ color: theme.colors.buttonText }}>
+          <Typography variant="body1" sx={{ color: theme.colors.text }}>
             <strong>Name:</strong> Gaurav Srivastava
           </Typography>
-          <Typography variant="body1" sx={{ color: theme.colors.buttonText }}>
+          <Typography variant="body1" sx={{ color: theme.colors.text }}>
             <strong>Phone:</strong> 7428879034 / 9990906462
           </Typography>
-          <Typography variant="body1" sx={{ color: theme.colors.buttonText }}>
+          <Typography variant="body1" sx={{ color: theme.colors.text }}>
             <strong>Address:</strong> Voltsmasters Energy Pvt. Ltd. <br />
             Office - Flat No-131, Block No-33, Second Floor, Sec-99, Noida
           </Typography>
-          <Typography variant="body1" sx={{ color: theme.colors.buttonText }}>
+          <Typography variant="body1" sx={{ color: theme.colors.text }}>
             <strong>Email:</strong>{" "}
             <a
               href="mailto:sales@voltsmasters.com"
@@ -65,12 +66,12 @@ const Contact = () => {
             variant="outlined"
             margin="normal"
             InputLabelProps={{
-              style: { color: theme.colors.buttonText },
+              style: { color: theme.colors.text },
             }}
             InputProps={{
               style: {
-                color: theme.colors.buttonText,
-                backgroundColor: "#444",
+                color: theme.colors.text,
+                backgroundColor: "#FFFFFF", // White background for input
                 borderRadius: "4px",
               },
             }}
@@ -85,7 +86,7 @@ const Contact = () => {
                 },
               },
               "& .MuiInputBase-input::placeholder": {
-                color: theme.colors.buttonText,
+                color: theme.colors.secondaryText,
               },
             }}
           />
@@ -96,12 +97,12 @@ const Contact = () => {
             variant="outlined"
             margin="normal"
             InputLabelProps={{
-              style: { color: theme.colors.buttonText },
+              style: { color: theme.colors.text },
             }}
             InputProps={{
               style: {
-                color: theme.colors.buttonText,
-                backgroundColor: "#444",
+                color: theme.colors.text,
+                backgroundColor: "#FFFFFF",
                 borderRadius: "4px",
               },
             }}
@@ -116,7 +117,7 @@ const Contact = () => {
                 },
               },
               "& .MuiInputBase-input::placeholder": {
-                color: theme.colors.buttonText,
+                color: theme.colors.secondaryText,
               },
             }}
           />
@@ -129,12 +130,12 @@ const Contact = () => {
             multiline
             rows={4}
             InputLabelProps={{
-              style: { color: theme.colors.buttonText },
+              style: { color: theme.colors.text },
             }}
             InputProps={{
               style: {
-                color: theme.colors.buttonText,
-                backgroundColor: "#444",
+                color: theme.colors.text,
+                backgroundColor: "#FFFFFF",
                 borderRadius: "4px",
               },
             }}
@@ -149,7 +150,7 @@ const Contact = () => {
                 },
               },
               "& .MuiInputBase-input::placeholder": {
-                color: theme.colors.buttonText,
+                color: theme.colors.secondaryText,
               },
             }}
           />
@@ -159,7 +160,7 @@ const Contact = () => {
             sx={{
               mt: 2,
               backgroundColor: theme.colors.primary,
-              color: theme.colors.buttonText,
+              color: "#FFFFFF",
               "&:hover": {
                 backgroundColor: theme.colors.secondary,
               },

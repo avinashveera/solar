@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import theme from '../theme';
 import { WhatsApp } from '@mui/icons-material'; // Import WhatsApp icon
-import logo from '../img/logo2.png'
+import logo from '../img/VOLTSMASTERS logo.png'
 
 function ResponsiveAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,7 +37,7 @@ function ResponsiveAppBar() {
           >
 
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <img src={logo} alt="" srcset="" style={{width:'100px',height:"70px"}} />
+              <img src={logo} alt="" srcset="" style={{width:'100px',height:"70px",backgroundColor:'#fff'}} />
             </Link>
           </Typography>
 
