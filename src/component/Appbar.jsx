@@ -27,7 +27,7 @@ function ResponsiveAppBar() {
 
   return (
     <Box sx={{ position: 'relative' }}>
-      <AppBar position="static" sx={{ backgroundColor: theme.colors.primary }}>
+      <AppBar position="static" sx={{ color: theme.colors.primary ,backgroundColor:theme.colors.background}}>
         <Toolbar>
           {/* Logo on the left */}
           <Typography
@@ -37,7 +37,7 @@ function ResponsiveAppBar() {
           >
 
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <img src={logo} alt="" srcset="" style={{width:'100px',height:"70px",backgroundColor:'#fff'}} />
+              <img src={logo} alt="" srcset="" style={{width:'100px',height:"70px"}} />
             </Link>
           </Typography>
 
@@ -49,7 +49,7 @@ function ResponsiveAppBar() {
                 variant="body1"
                 sx={{ marginRight: 2, color: theme.colors.buttonText }}
               >
-                <Link to={item.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to={item.link} style={{ textDecoration: 'none', color: theme.colors.primary }}>
                   {item.label}
                 </Link>
               </Typography>
@@ -74,11 +74,15 @@ function ResponsiveAppBar() {
             sx={{ display: { md: 'none' } }}
           >
             {menuItems.map((item) => (
-              <MenuItem key={item.label} onClick={handleMenuClose}>
-                <Link to={item.link} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  {item.label}
-                </Link>
-              </MenuItem>
+              <MenuItem key={item.label} onClick={() => { handleMenuClose(); }}>
+              <Link
+                to={item.link}
+                style={{ textDecoration: 'none', color: 'inherit', display: 'block', width: '100%' }}
+              >
+                {item.label}
+              </Link>
+            </MenuItem>
+            
             ))}
           </Menu>
         </Toolbar>

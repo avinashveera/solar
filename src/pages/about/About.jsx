@@ -1,10 +1,11 @@
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
+import theme from "../../theme";
 
 const About = () => {
   return (
     <Container>
-      <Box sx={{ py: 4 }}>
+      <Box sx={{ py: 4,color:theme.colors.secondary }}>
         <Typography variant="h3" gutterBottom>
           About Voltsmasters Energy
         </Typography>

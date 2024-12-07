@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Typography, Grid, Box } from '@mui/material';
 import ProductCard from '../../component/Product'; // Import the ProductCard
 import products from '../../product';
+import theme from '../../theme';
 
 
 
@@ -10,7 +11,7 @@ const Product = () => {
   return (
     <Container>
       <Box sx={{ py: 4 }}>
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="h3" sx={{color:theme.colors.secondary }} gutterBottom>
           Our Products
         </Typography>
         <Grid container spacing={4}>

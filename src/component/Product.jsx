@@ -31,7 +31,7 @@ function ProductCard({ image, title, description, features, price,  onClick  }) 
           alt={title}
         />
         <CardContent sx={{ paddingBottom: 1 }}> {/* Reduced bottom padding */}
-          <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
+          <Typography variant="h5" component="div" sx={{ fontWeight: 'bold'}}>
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
