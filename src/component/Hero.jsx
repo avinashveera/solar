@@ -24,14 +24,14 @@ const HeroSection = () => {
             justifyContent: 'center',
             background: 'linear-gradient(135deg, #F58525 30%, #088D47 90%)',
             clipPath:'polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)',
-            padding: 6,
+            padding: 5,
           }}
         >
           <Box>
             <Typography
-              variant="h4"
+              variant="h5"
               component="h1"
-              sx={{ fontWeight: 'bold', color: '#fff', mb: 2, textAlign: 'center'
+              sx={{ fontWeight: 'bold', color: '#fff', mb: 1, textAlign: 'center'
                }}
             >
               Voltsmasters Energy Pvt Ltd - Empowering Tomorrow, Energizing Today!
@@ -40,10 +40,10 @@ const HeroSection = () => {
               variant="body1"
               sx={{ 
                 color: '#fff',
-                lineHeight: 1.6,
+                lineHeight: 1.4,
                 textAlign: 'center',
                 fontSize: {
-                  xs: '0.9rem', // Small font size for extra-small screens (mobile)
+                  xs: '0.8rem', // Small font size for extra-small screens (mobile)
                   sm: '1rem',   // Default size for small screens (tablets)
                   md: '1.2rem', // Medium size for medium screens (desktop)
                   lg: '1.4rem', // Larger size for large screens (larger desktops)

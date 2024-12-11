@@ -1,22 +1,13 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Box } from '@mui/material';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import theme from '../theme';
-import { WhatsApp } from '@mui/icons-material'; // Import WhatsApp icon
-import logo from '../img/VOLTSMASTERS logo.png'
+import { WhatsApp } from '@mui/icons-material';
+import logo from '../img/VOLTSMASTERS logo.png';
 
 function ResponsiveAppBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const menuItems = [
     { label: 'Home', link: '/' },
@@ -25,23 +16,26 @@ function ResponsiveAppBar() {
     { label: 'Our Product', link: '/product' },
   ];
 
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
   return (
-    <Box sx={{ position: 'relative' }}>
-      <AppBar position="static" sx={{ color: theme.colors.primary ,backgroundColor:theme.colors.background}}>
+    <Box>
+      <AppBar position="fixed" sx={{ backgroundColor: theme.colors.background ,color:theme.colors.secondary}}>
         <Toolbar>
-          {/* Logo on the left */}
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, fontWeight: 'bold', color: theme.colors.buttonText }}
-          >
+          {/* Left Section - Logo and Company Name */}
+          <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+            <img src={logo} alt="VOLTSMASTERS Logo" style={{ width: '60px', height: '60px', marginRight: '10px' }} />
+            <Typography variant="h6" sx={{ fontWeight: 'bold', color: theme.colors.primary }}>
+              VOLTSMASTERS
+            </Typography>
+          </Box>
 
-            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <img src={logo} alt="" srcset="" style={{width:'100px',height:"70px"}} />
-            </Link>
-          </Typography>
-
-          {/* Responsive Menu */}
+          {/* Right Section - Menu */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {menuItems.map((item) => (
               <Typography
@@ -56,68 +50,74 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Drawer Icon */}
           <IconButton
             size="large"
-            edge="start"
+            edge="end"
             color="inherit"
-            aria-label="menu"
-            sx={{ display: { md: 'none' } }}
-            onClick={handleMenuOpen}
+            sx={{ display: { xs: 'flex', md: 'none' } }}
+            onClick={toggleDrawer(true)}
           >
             <MenuIcon />
           </IconButton>
-          <Menu
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleMenuClose}
-            sx={{ display: { md: 'none' } }}
-          >
-            {menuItems.map((item) => (
-              <MenuItem key={item.label} onClick={() => { handleMenuClose(); }}>
-              <Link
-                to={item.link}
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block', width: '100%' }}
-              >
-                {item.label}
-              </Link>
-            </MenuItem>
-            
-            ))}
-          </Menu>
         </Toolbar>
       </AppBar>
 
+      {/* Drawer for Mobile View */}
+      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+        <Box
+          sx={{
+            width: 250,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: 2,
+          }}
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          {/* Drawer Logo */}
+          <img src={logo} alt="VOLTSMASTERS Logo" style={{ width: '80px', height: '80px', marginBottom: '20px' }} />
+          {/* Menu List */}
+          <List>
+            {menuItems.map((item) => (
+              <ListItem key={item.label} button component={Link} to={item.link}>
+                <ListItemText primary={item.label} sx={{ textAlign: 'center' }} />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+
       {/* WhatsApp Icon - Fixed Bottom Right */}
       <Box
-  sx={{
-    position: 'fixed',
-    bottom: 50,
-    right: 20,
-    width: '60px',  // Increased size for better icon fit
-    height: '60px', // Equal to width to maintain circle shape
-    backgroundColor: theme.colors.secondary,
-    borderRadius: '50%',
-    zIndex:"999",
-    display: 'flex',
-    alignItems: 'center', // Centering icon vertically
-    justifyContent: 'center', // Centering icon horizontally
-    cursor: 'pointer',
-    animation: 'pulse 2s infinite', // Pulse animation
-    '&:hover': {
-      backgroundColor: theme.colors.accent,
-    },
-  }}
->
-  <a
-    href="https://wa.me/1234567890" // Replace with your WhatsApp number
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <WhatsApp sx={{ color: '#fff', fontSize: '40px' }} /> {/* Ideal size for icon */}
-  </a>
-</Box>
-
+        sx={{
+          position: 'fixed',
+          bottom: 50,
+          right: 20,
+          width: '60px',
+          height: '60px',
+          backgroundColor: theme.colors.secondary,
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          zIndex: 999,
+          '&:hover': {
+            backgroundColor: theme.colors.accent,
+          },
+        }}
+      >
+        <a
+          href="https://wa.me/1234567890" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <WhatsApp sx={{ color: '#fff', fontSize: '40px' }} />
+        </a>
+      </Box>
     </Box>
   );
 }

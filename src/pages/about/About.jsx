@@ -5,8 +5,8 @@ import theme from "../../theme";
 const About = () => {
   return (
     <Container>
-      <Box sx={{ py: 4,color:theme.colors.secondary }}>
-        <Typography variant="h3" gutterBottom>
+      <Box sx={{ py: 4,color:theme.colors.text,mt:4}}>
+        <Typography variant="h4" gutterBottom>
           About Voltsmasters Energy
         </Typography>
         <Typography variant="body1" paragraph>

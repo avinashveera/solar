@@ -16,7 +16,8 @@ const Home = () => {
   };
 
   return (
-    <>
+
+    <div style={{marginTop:"50px"}}>
       <Coursel />
       <Hero />
       <Container>
@@ -41,7 +42,7 @@ const Home = () => {
         </Box>
       </Container>
       <Contact />
-    </>
+    </div>
   );
 };
 

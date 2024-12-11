@@ -10,8 +10,8 @@ import theme from '../../theme';
 const Product = () => {
   return (
     <Container>
-      <Box sx={{ py: 4 }}>
-        <Typography variant="h3" sx={{color:theme.colors.secondary }} gutterBottom>
+      <Box sx={{ py: 4 ,mt:4}}>
+        <Typography variant="h3" sx={{color:theme.colors.primary }} gutterBottom>
           Our Products
         </Typography>
         <Grid container spacing={4}>

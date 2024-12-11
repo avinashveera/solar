@@ -8,6 +8,7 @@ const Contact = () => {
       <Box
         sx={{
           py: 4,
+          mt:5,
           backgroundColor: "#F5F5F5", // Light background color
           color: theme.colors.text, // Dark text color
           padding: "20px",

@@ -20,7 +20,8 @@ function ProductCard({ image, title, description, features, price,  onClick  }) 
           margin: '0 auto',         // Center the card horizontally
           boxShadow: 3,             // Optional: adds shadow to make it stand out
           borderRadius: 2,          // Optional: rounded corners
-          cursor: 'pointer'
+          cursor: 'pointer',
+          p:2
         }}
         onClick={onClick}  
       >
